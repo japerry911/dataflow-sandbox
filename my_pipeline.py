@@ -38,13 +38,13 @@ def run():
     options.view_as(StandardOptions).runner = opts.runner
 
     # Static input and output
-    input_filename = "gs://dataflow-digible-poc-123/" \
-                     "apartments__get_listings_rank-2022-10-11T11-01-30" \
-                     ".parquet"
-    dest_bq_landing_table = "{0}:land.apts_dot_com_ranking_landing".format(
+    input_filename = "gs://<PROJECT-ID>/" \
+                     "<FILENAME>" \
+                     ".<FILE-EXTENSION"
+    dest_bq_landing_table = "{0}:<SCHEMA>.<TABLE_NAME>".format(
         opts.project
     )
-    dest_bq_trans_table = "{0}:transformed.apts_dot_com_ranking_transformed"\
+    dest_bq_trans_table = "{0}:<SCHEMA>.<TABLE_NAME>"\
         .format(opts.project)
 
     # Table schema for BigQuery
