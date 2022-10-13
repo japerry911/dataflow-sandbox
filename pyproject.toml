@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "dataflow-poc-cleanup"
+version = "0.1.0"
+description = ""
+authors = ["Jack Perry <jack.e.perry@outlook.com>"]
+readme = "README.md"
+packages = [{include = "dataflow_apts_dot_com"}]
+
+[tool.poetry.dependencies]
+python = "~3.9"
+wheel = "^0.37.1"
+pip = "^22.2.2"
+setuptools = "^65.4.1"
+apache-beam = {extras = ["gcp"], version = "^2.41.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
