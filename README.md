@@ -1,6 +1,6 @@
 # Dataflow Sandbox
 
-#### Example in executing BEAM Pipeline in Dataflow
+#### Example in executing BEAM Pipeline in GCP Dataflow
 ```shell
 Run the pipelines
 python3 my_pipeline.py \
