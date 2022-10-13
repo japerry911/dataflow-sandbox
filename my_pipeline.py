@@ -38,13 +38,14 @@ def run():
     options.view_as(StandardOptions).runner = opts.runner
 
     # Static input and output
-    input_filename = "<INSERT-GCS-FILEPATH-HERE>"
-    dest_bq_landing_table = "{0}:<SCHEMA>.<TABLE_NAME>".format(
+    input_filename = "gs://dataflow-digible-poc-123/" \
+                     "apartments__get_listings_rank-2022-10-11T11-01-30" \
+                     ".parquet"
+    dest_bq_landing_table = "{0}:land.apts_dot_com_ranking_landing".format(
         opts.project
     )
-    dest_bq_trans_table = "{0}:<SCHEMA>.<TABLE_NAME>".format(
-        opts.project
-    )
+    dest_bq_trans_table = "{0}:transformed.apts_dot_com_ranking_transformed"\
+        .format(opts.project)
 
     # Table schema for BigQuery
     landing_table_schema = {
@@ -133,11 +134,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-
-# Run the pipelines
-# python3 my_pipeline.py \
-#   --project=${PROJECT_ID} \
-#   --region=us-central1 \
-#   --stagingLocation=gs://$PROJECT_ID/staging/ \
-#   --tempLocation=gs://$PROJECT_ID/temp/ \
-#   --runner=DataflowRunner
